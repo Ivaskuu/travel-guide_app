@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'lista_citta.dart';
 import 'screen_citta.dart';
 
 class ListaCittaScreen extends StatelessWidget
@@ -7,16 +8,10 @@ class ListaCittaScreen extends StatelessWidget
   {
     return new Scaffold
     (
-      body: new PageView
+      body: new PageView.builder
       (
-        children: <Widget>
-        [
-          new CopertinaCitta("New York", "res/citta/new-york.jpg"),
-          new CopertinaCitta("Paris", "res/citta/paris.jpg"),
-          new CopertinaCitta("Tokyo", "res/citta/tokyo.jpg"),
-          new CopertinaCitta("Kyoto", "res/citta/kyoto.jpg"),
-          new CopertinaCitta("St Petersburg", "res/citta/st-petersburg.jpg"),
-        ],
+        itemBuilder: (_, int i) => new CopertinaCitta(ListaCitta.listaCitta[i]),
+        itemCount: ListaCitta.listaCitta.length,
       )
     );
   }
@@ -24,9 +19,8 @@ class ListaCittaScreen extends StatelessWidget
 
 class CopertinaCitta extends StatelessWidget
 {
-  String _nomeCitta;
-  String _img;
-  CopertinaCitta(this._nomeCitta, this._img);
+  Citta citta;
+  CopertinaCitta(this.citta);
 
   Widget build(BuildContext context)
   {
@@ -36,7 +30,7 @@ class CopertinaCitta extends StatelessWidget
       (
         image: new DecorationImage
         (
-          image: new AssetImage(_img),
+          image: new AssetImage(citta.img),
           fit: BoxFit.cover,
           colorFilter: new ColorFilter.mode(Colors.black45, BlendMode.luminosity)
         )
@@ -51,7 +45,7 @@ class CopertinaCitta extends StatelessWidget
             child: new Container
             (
               margin: new EdgeInsets.only(top: 32.0, left: 24.0, right: 24.0),
-              child: new Text(_nomeCitta.toUpperCase(), style: new TextStyle(color: Colors.white, fontSize: 90.0, fontWeight: FontWeight.w700)),
+              child: new Text(citta.nome.toUpperCase(), style: new TextStyle(color: Colors.white, fontSize: 90.0, fontWeight: FontWeight.w700)),
             )
           ),
           new Align
@@ -64,7 +58,7 @@ class CopertinaCitta extends StatelessWidget
               (
                 backgroundColor: Colors.white,
                 child: new Icon(Icons.keyboard_arrow_up, color: Colors.black),
-                onPressed: () => Navigator.of(context).push(new MaterialPageRoute(builder: (_) => new ScreenCitta()))
+                onPressed: () => Navigator.of(context).push(new MaterialPageRoute(builder: (_) => new ScreenCitta(citta)))
               )
             )
           ),

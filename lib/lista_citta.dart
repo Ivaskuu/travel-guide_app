@@ -1,6 +1,6 @@
 class ListaCitta
 {
-  List<Citta> citta = 
+  static List<Citta> listaCitta = 
   [
     new Citta
     (
@@ -30,7 +30,7 @@ class ListaCitta
         new Luogo
         (
           nome: "Tempio Kiyomizu",
-          descrizione: "Tempio molto bello",
+          descrizione: "Questo vecchio tempio è stato creato da molti shaolin che volevano avere un luogo tranquillo dove allenarsi mentre fuori c'era la guerra.",
           img: "res/citta/kyoto-0.jpg"
         ),
         new Luogo
