@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screen_citta.dart';
 
 class ListaCittaScreen extends StatelessWidget
 {
@@ -63,7 +64,7 @@ class CopertinaCitta extends StatelessWidget
               (
                 backgroundColor: Colors.white,
                 child: new Icon(Icons.keyboard_arrow_up, color: Colors.black),
-                onPressed: () => print("Click")
+                onPressed: () => Navigator.of(context).push(new MaterialPageRoute(builder: (_) => new ScreenCitta()))
               )
             )
           ),
