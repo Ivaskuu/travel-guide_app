@@ -32,6 +32,10 @@ flutter:
    - res/citta/tokyo.jpg
    - res/citta/kyoto.jpg
    - res/citta/st-petersburg.jpg
+   - res/citta/kyoto-0.jpg
+   - res/citta/kyoto-1.jpg
+   - res/citta/kyoto-2.jpg
+   - res/citta/kyoto-3.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

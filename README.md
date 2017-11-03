@@ -1,8 +1,7 @@
-# travel_guide
+# Travel guide
 
-A new Flutter project.
+An application I made for fun.
 
-## Getting Started
+### Screenshots
 
-For help getting started with Flutter, view our online
-[documentation](http://flutter.io/).
+![](screenshots/)
