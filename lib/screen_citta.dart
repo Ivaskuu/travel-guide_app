@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'lista_citta.dart';
+import 'screen_cerca_biglietto.dart';
 
 class ScreenCitta extends StatefulWidget
 {
@@ -19,7 +20,7 @@ class ScreenCittaState extends State<ScreenCitta>
       appBar: new AppBar
       (
         backgroundColor: Colors.white,
-        title: new Text("${widget._citta.nome}"/* (4/${widget._citta.luoghi.length})"*/),
+        title: new Text("${widget._citta.nome}"),
         actions: <Widget>
         [
           new IconButton(icon: new Icon(Icons.search), onPressed: () => null)
@@ -33,7 +34,7 @@ class ScreenCittaState extends State<ScreenCitta>
       ),
       floatingActionButton: new FloatingActionButton
       (
-        onPressed: () => null,
+        onPressed: () => Navigator.of(context).push(new MaterialPageRoute(builder: (_) => new ScreenCercaBiglietto())),
         child: new Icon(Icons.flight_takeoff),
         backgroundColor: Colors.pinkAccent,
       ),

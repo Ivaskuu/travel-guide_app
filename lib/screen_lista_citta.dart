@@ -4,6 +4,7 @@ import 'screen_citta.dart';
 
 class ListaCittaScreen extends StatelessWidget
 {
+  PageController controller = new PageController();
   Widget build(BuildContext context)
   {
     return new Scaffold
@@ -12,6 +13,7 @@ class ListaCittaScreen extends StatelessWidget
       (
         itemBuilder: (_, int i) => new CopertinaCitta(ListaCitta.listaCitta[i]),
         itemCount: ListaCitta.listaCitta.length,
+        controller: controller,
       )
     );
   }
@@ -19,7 +21,7 @@ class ListaCittaScreen extends StatelessWidget
 
 class CopertinaCitta extends StatelessWidget
 {
-  Citta citta;
+  final Citta citta;
   CopertinaCitta(this.citta);
 
   Widget build(BuildContext context)
