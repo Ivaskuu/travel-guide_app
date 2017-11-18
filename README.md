@@ -1,8 +1,7 @@
 # Travel guide
-
-An application I made for fun.
+An application made with flutter.
 
 ### Screenshots
 
-![ui](screenshots/flutter_01.png)
-![ui](screenshots/flutter_02.png)
+![1](screenshots/flutter_01.png)
+![2](screenshots/flutter_02.png)
